@@ -1,3 +1,4 @@
+export APP_NAME=laravel
 export IP_SOURCE=127.10.0.1
 export IP_REDIS=127.10.0.2
 export REDIS_PORT=6379

@@ -1,0 +1,17 @@
+#!bin/sh
+apt-get install composer
+
+install_laravel () {
+  current_dir=$(pwd);
+  dir_laravel=$1
+if ! -z dir_laravel; then
+  dir_laravel="laravel"
+fi
+full_path="$current_dir/$dir_laravel"
+composer create-project --prefer-dist laravel/laravel "$full_path"
+cp "-a" "$full_path"/. "$current_dir"
+rm -r "$full_path"
+}
+
+install_laravel "$1"
+
